@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   const [todos, setTodos] = useState([]);
   const [todoInput,setTodoInput] = useState('');
-  const [filterText, setFilterText] = useState('not-completed');
+  const [filterText, setFilterText] = useState('all');
 
   const addTodoshandler = ()=>{
     if(todoInput){
@@ -21,7 +21,7 @@ function App() {
       return todos.filter(todo=>todo.completed===false)
     }
     return todos;
-  },[filterText])
+  },[filterText,todos])
   console.log(todos)
   return (
     <div className='main-container'>
